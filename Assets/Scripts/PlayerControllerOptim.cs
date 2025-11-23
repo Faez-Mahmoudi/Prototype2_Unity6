@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerControllerOptim : MonoBehaviour
 {
+    // Initial Commit
     //public GameObject projectilePrefab;
     //public Transform projectileSpawnPoint;
     public float horizontalInput;
