@@ -1,9 +1,14 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     private int score = 0;
     private int lives = 3;
+
+    //UI
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI livesText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,12 +30,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over!!");
             lives = 0;
         }
-        Debug.Log("Lives = " + lives);
+        livesText.text = "Lives = " + lives;
     }
 
     public void AddScore(int value)
     {
         score += value;
-        Debug.Log("Score = " + score);
+        scoreText.SetText("Score = " + score);
     }
 }

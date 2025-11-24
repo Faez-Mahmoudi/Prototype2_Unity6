@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class PlayerControllerOptim : MonoBehaviour
 {
-    // Initial Commit
-    //public GameObject projectilePrefab;
-    //public Transform projectileSpawnPoint;
-    public float horizontalInput;
-    public float verticalInput;
-    public float speed = 15.0f;
+    [SerializeField] private float speed = 15.0f;
     private float xRange = 15.0f;
     private float zMIn = -1.5f;
     private float zMax = 15.5f;
@@ -22,11 +17,11 @@ public class PlayerControllerOptim : MonoBehaviour
     void Update()
     {
         // Move the player horizontally
-        horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * horizontalInput * speed);
 
         // Move the player vertically
-        verticalInput = Input.GetAxis("Vertical");
+        float verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * speed);
 
         // Keep the player in bound
@@ -42,8 +37,6 @@ public class PlayerControllerOptim : MonoBehaviour
         // Instantiate projectile
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            //Instantiate(projectilePrefab, projectileSpawnPoint.position, projectilePrefab.transform.rotation);
-
             // Get an onject from the pool
             GameObject pooledProjecctile = ObjectPooler.SharedInstance.GetPooledObject();
             if (pooledProjecctile != null)
