@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 241907994}
   - component: {fileID: 241907993}
   - component: {fileID: 241907992}
+  - component: {fileID: 241907996}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -616,6 +617,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &241907996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241907991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3e141d1972e6943b6b2cca14c391ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1926702932}
+  pausePanel: {fileID: 424992513}
 --- !u!1 &287490177
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +849,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 346037999}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241907996}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &346037999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15206d9625fd13f4db485c0f9175cf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameActive: 0
   scoreText: {fileID: 1355657746}
   livesText: {fileID: 346973093}
 --- !u!4 &553769622
@@ -2142,7 +2170,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1211847329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241907996}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1211847329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3114,7 +3154,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1985249763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241907996}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1985249763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3235,7 +3287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2011485451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 241907996}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011485451
 MonoBehaviour:
   m_ObjectHideFlags: 0

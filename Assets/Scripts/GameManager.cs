@@ -3,23 +3,27 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance{get; private set;}
     private int score = 0;
     private int lives = 3;
+    public bool isGameActive;
 
     //UI
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI livesText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
-    }
+       if (Instance != null)
+       {
+            Destroy(gameObject);
+            return;
+       }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+       Instance = this;
+       DontDestroyOnLoad(gameObject); 
+       isGameActive = true;
     }
 
     public void AddLives(int value)
@@ -27,8 +31,8 @@ public class GameManager : MonoBehaviour
         lives += value;
         if(lives <= 0)
         {
-            Debug.Log("Game Over!!");
             lives = 0;
+            isGameActive = false;
         }
         livesText.text = "Lives = " + lives;
     }

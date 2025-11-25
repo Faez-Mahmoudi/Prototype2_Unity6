@@ -7,14 +7,18 @@ public class PlayerControllerOptim : MonoBehaviour
     private float zMIn = -1.5f;
     private float zMax = 15.5f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
+    {
+        Move();
+
+        KeepInBound();
+        
+        if(GameManager.Instance.isGameActive)
+            FoodFire();
+    }
+
+    public void Move()
     {
         // Move the player horizontally
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -23,7 +27,10 @@ public class PlayerControllerOptim : MonoBehaviour
         // Move the player vertically
         float verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * speed);
+    }
 
+    public void KeepInBound()
+    {
         // Keep the player in bound
         if(transform.position.x < -xRange)
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -33,7 +40,10 @@ public class PlayerControllerOptim : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zMIn);
         if(transform.position.z > zMax)
             transform.position = new Vector3(transform.position.x, transform.position.y, zMax);
-        
+    }
+
+    public void FoodFire()
+    {
         // Instantiate projectile
         if(Input.GetKeyDown(KeyCode.Space))
         {
