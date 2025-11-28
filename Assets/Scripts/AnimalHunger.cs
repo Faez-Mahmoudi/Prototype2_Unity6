@@ -6,7 +6,7 @@ public class AnimalHunger : MonoBehaviour
     public Slider hungerSlider;
     public int amountToBeFed;
     private int currentFedAmount = 0;
-    private GameManager gameManager;
+    private UIHandler uiHandler;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,13 +15,7 @@ public class AnimalHunger : MonoBehaviour
         hungerSlider.value = 0;
         hungerSlider.fillRect.gameObject.SetActive(false);
 
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        uiHandler = GameObject.Find("Canvas").GetComponent<UIHandler>();
         
     }
 
@@ -34,7 +28,7 @@ public class AnimalHunger : MonoBehaviour
 
         if(currentFedAmount >= amountToBeFed)
         {
-            gameManager.AddScore(amountToBeFed);
+            uiHandler.AddScore(amountToBeFed);
             Destroy(gameObject, 0.1f);
         }
     }

@@ -1,16 +1,18 @@
 using UnityEngine;
-using TMPro;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance{get; private set;}
-    private int score = 0;
-    private int lives = 3;
+    public int bestScore;
     public bool isGameActive;
 
-    //UI
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI livesText;
+    // Save bestScore
+    [System.Serializable]
+    class SaveData
+    {
+        public int b_Score;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -24,22 +26,27 @@ public class GameManager : MonoBehaviour
        Instance = this;
        DontDestroyOnLoad(gameObject); 
        isGameActive = true;
+       LoadScore();
     }
 
-    public void AddLives(int value)
+    public void SaveScore()
     {
-        lives += value;
-        if(lives <= 0)
+        SaveData data = new SaveData();
+        data.b_Score = bestScore;
+
+        string json  = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void LoadScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+
+        if (File.Exists(path))
         {
-            lives = 0;
-            isGameActive = false;
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            bestScore = data.b_Score;
         }
-        livesText.text = "Lives = " + lives;
-    }
-
-    public void AddScore(int value)
-    {
-        score += value;
-        scoreText.SetText("Score = " + score);
     }
 }
