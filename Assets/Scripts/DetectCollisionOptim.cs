@@ -19,7 +19,9 @@ public class DetectCollisionOptim : MonoBehaviour
         }
         else if (other.CompareTag("Animal"))
         {
-            other.GetComponent<AnimalHunger>().FeedAnimal(1);
+            AnimalHunger animalHunger = other.GetComponent<AnimalHunger>();
+            animalHunger.hungerSlider.gameObject.SetActive(true);
+            animalHunger.FeedAnimal(1);
             uiHandler.AddScore(5);
             gameObject.SetActive(false);
         }   

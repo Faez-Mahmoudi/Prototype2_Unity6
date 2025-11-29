@@ -7,13 +7,14 @@ using UnityEditor;
 
 public class UIHandler : MonoBehaviour
 {
+    [Header("Panel")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject pausePanel;
     private bool paused;
     private int score = 0;
     private int lives = 3;
 
-    //UI
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI bestScoreText;
     [SerializeField] private TextMeshProUGUI yourScoreText;
@@ -55,6 +56,9 @@ public class UIHandler : MonoBehaviour
             GameManager.Instance.bestScore = score;
             bestScoreText.SetText("Best Score: " + GameManager.Instance.bestScore);
         }
+
+        if (score % 100 == 0)
+            AddLives(1);
     }
 
     public void ChangePause()

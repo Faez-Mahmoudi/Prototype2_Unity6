@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class AnimalHunger : MonoBehaviour
 {
     public Slider hungerSlider;
-    public int amountToBeFed;
+    [SerializeField] private int amountToBeFed;
     private int currentFedAmount = 0;
     private UIHandler uiHandler;
 
@@ -14,6 +14,7 @@ public class AnimalHunger : MonoBehaviour
         hungerSlider.maxValue = amountToBeFed;
         hungerSlider.value = 0;
         hungerSlider.fillRect.gameObject.SetActive(false);
+        hungerSlider.gameObject.SetActive(false);
 
         uiHandler = GameObject.Find("Canvas").GetComponent<UIHandler>();
         
