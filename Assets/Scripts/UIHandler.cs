@@ -13,6 +13,7 @@ public class UIHandler : MonoBehaviour
     private bool paused;
     private int score = 0;
     private int lives = 3;
+    private int nextLifeScore = 50;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -57,8 +58,12 @@ public class UIHandler : MonoBehaviour
             bestScoreText.SetText("Best Score: " + GameManager.Instance.bestScore);
         }
 
-        if (score % 100 == 0)
+        while (score >= nextLifeScore)
+        {
+            livesText.text = "Lives = " + lives + " +1";
             AddLives(1);
+            nextLifeScore += 100;            
+        }
     }
 
     public void ChangePause()
