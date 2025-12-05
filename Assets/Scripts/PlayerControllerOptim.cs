@@ -3,6 +3,9 @@ using UnityEngine;
 public class PlayerControllerOptim : MonoBehaviour
 {
     [SerializeField] private float speed = 15.0f;
+    [SerializeField] private GameObject foodSpawnPosRight;
+    [SerializeField] private GameObject foodSpawnPosLeft;
+    [SerializeField] private GameObject projectilePrefab;
     private float xRange = 15.0f;
     private float zMIn = -1.5f;
     private float zMax = 15.5f;
@@ -48,12 +51,27 @@ public class PlayerControllerOptim : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             // Get an onject from the pool
-            GameObject pooledProjecctile = ObjectPooler.SharedInstance.GetPooledObject();
-            if (pooledProjecctile != null)
+            for (int i = 0; i < 3; i++)
             {
-                pooledProjecctile.SetActive(true); // Ativate it
-                pooledProjecctile.transform.position = transform.position; // Position it at player
-            } 
+                GameObject pooledProjecctile = ObjectPooler.SharedInstance.GetPooledObject();
+                if (pooledProjecctile != null)
+                {
+                    pooledProjecctile.SetActive(true); // Ativate it
+
+                    if (i == 0 )
+                        pooledProjecctile.transform.position = transform.position; // Position it at player
+                    else if (i == 1 )
+                    {
+                        pooledProjecctile.transform.position = foodSpawnPosRight.transform.position; // Position it at right
+                        pooledProjecctile.transform.rotation = foodSpawnPosRight.transform.rotation; // rotation 
+                    }
+                    else if (i == 2 )
+                    {
+                        pooledProjecctile.transform.position = foodSpawnPosLeft.transform.position; // Position it at left
+                        pooledProjecctile.transform.rotation = foodSpawnPosLeft.transform.rotation; // rotation
+                    }
+                } 
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler SharedInstance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
+    //public GameObject secondObjectToPool;
     public int amountToPool;
 
     // called as soon as the object is created

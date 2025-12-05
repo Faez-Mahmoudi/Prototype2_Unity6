@@ -16,22 +16,20 @@ public class DestroyOutOfBoundOptim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.z > topBound)
-            gameObject.SetActive(false);
-        else if(transform.position.z < lowerBound)
+        if (gameObject.CompareTag("Food"))
         {
-            Destroy(gameObject);
-            uiHandler.AddLives(-1);
+            if(transform.position.z > topBound || transform.position.x > sideBound || transform.position.x > sideBound)
+                gameObject.SetActive(false);   
         }
-        else if(transform.position.x > sideBound)
+        else if(gameObject.CompareTag("Animal"))
         {
-            Destroy(gameObject);
-            uiHandler.AddLives(-1);
+            if(transform.position.z < lowerBound || transform.position.x > sideBound || transform.position.x < -sideBound )
+            {
+                Destroy(gameObject);
+                uiHandler.AddLives(-1);
+            } 
         }
-        else if(transform.position.x < -sideBound)
-        {
-            Destroy(gameObject);
-            uiHandler.AddLives(-1);
-        }   
+        
+         
     }
 }
