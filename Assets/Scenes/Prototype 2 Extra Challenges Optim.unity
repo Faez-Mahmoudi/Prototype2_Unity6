@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1926702932}
   pausePanel: {fileID: 424992513}
+  paused: 0
   scoreText: {fileID: 1355657746}
   bestScoreText: {fileID: 1572571866}
   yourScoreText: {fileID: 342388724}
@@ -1895,7 +1896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &777736600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2252,6 +2253,8 @@ MonoBehaviour:
   foodSpawnPosRight: {fileID: 396232387}
   foodSpawnPosLeft: {fileID: 1284897191}
   projectilePrefab: {fileID: 841250652233674747, guid: cebf2d06561f98948913e9d92043d26c, type: 3}
+  powerupPanel: {fileID: 777736599}
+  hasPowerup: 0
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,6 +3843,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011485448}
   m_CullTransparentMesh: 1
+--- !u!1001 &7983854165719900262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.605
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051122393303548152, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202105511591960086, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
+      propertyPath: m_Name
+      value: PowerupApple
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78138343581f6944298ef7f4df6f10c5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3852,3 +3912,4 @@ SceneRoots:
   - {fileID: 553769622}
   - {fileID: 1552120192}
   - {fileID: 241907995}
+  - {fileID: 7983854165719900262}

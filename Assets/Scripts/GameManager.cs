@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance{get; private set;}
     public int bestScore;
     public bool isGameActive;
-    //public bool hasPowerup = true;
 
     // Save bestScore
     [System.Serializable]

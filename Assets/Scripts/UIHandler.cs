@@ -10,7 +10,7 @@ public class UIHandler : MonoBehaviour
     [Header("Panel")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject pausePanel;
-    private bool paused;
+    public bool paused;
     private int score = 0;
     private int lives = 3;
     private int nextLifeScore = 50;
