@@ -8,6 +8,7 @@ public class PlayerControllerOptim : MonoBehaviour
     [SerializeField] private GameObject foodSpawnPosLeft;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject powerupPanel;
+    [SerializeField] private GameObject livePanel;
     private Vector3 offset = new Vector3(0.0f, 0.5f, 1.5f);
     private float xRange = 15.0f;
     private float zMIn = -1.5f;
@@ -42,6 +43,14 @@ public class PlayerControllerOptim : MonoBehaviour
             powerupPanel.gameObject.SetActive(true);
             StartCoroutine(PowerupCountdownRoutine());
         }
+
+        if(other.CompareTag("LivePear"))
+        {
+            Destroy(other.gameObject);
+            livePanel.gameObject.SetActive(true);
+            uiHandler.AddLives(1);
+            StartCoroutine(LiveCountdownRoutine());
+        }
     }
 
     IEnumerator PowerupCountdownRoutine()
@@ -49,6 +58,12 @@ public class PlayerControllerOptim : MonoBehaviour
         yield return new WaitForSeconds(7);
         hasPowerup = false;
         powerupPanel.gameObject.SetActive(false);
+    }
+
+    IEnumerator LiveCountdownRoutine()
+    {
+        yield return new WaitForSeconds(1);
+        livePanel.gameObject.SetActive(false);
     }
 
     public void Move()

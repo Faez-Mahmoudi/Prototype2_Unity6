@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PowerupRotation : MonoBehaviour
 {
-    private float rotationSpeed = 15;
+    [SerializeField] private float rotationSpeed = 25;
 
     // Update is called once per frame
     void Update()

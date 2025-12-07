@@ -10,10 +10,13 @@ public class UIHandler : MonoBehaviour
     [Header("Panel")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject powerupPrefab;
+    [SerializeField] private GameObject livePearPrefab;
     public bool paused;
     private int score = 0;
     private int lives = 3;
-    private int nextLifeScore = 50;
+    private int nextPowerupScore = 50;
+    private int nextLiveScore = 100;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -58,11 +61,18 @@ public class UIHandler : MonoBehaviour
             bestScoreText.SetText("Best Score: " + GameManager.Instance.bestScore);
         }
 
-        while (score >= nextLifeScore)
+        while (score >= nextPowerupScore)
         {
-            livesText.text = "Lives = " + lives + " +1";
-            AddLives(1);
-            nextLifeScore += 100;            
+            Vector3 pos = new Vector3(Random.Range(-10, 10), 1, Random.Range(0, 10));
+            Instantiate(powerupPrefab, pos, powerupPrefab.transform.rotation);
+            nextPowerupScore += 100;            
+        }
+
+        while (score >= nextLiveScore)
+        {
+            Vector3 pos = new Vector3(Random.Range(-10, 10), 1, Random.Range(0, 10));
+            Instantiate(livePearPrefab, pos, livePearPrefab.transform.rotation);
+            nextLiveScore += 100;            
         }
     }
 

@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class PanelSetting : MonoBehaviour
 {
-    public Image panelImage;
+    private Image panelImage;
 
-    private float minAlpha = 0f;
-    private float maxAlpha = 0.15f;
-    private float speed = 1f;
+    [SerializeField] private float minAlpha = 0f;
+    [SerializeField] private float maxAlpha = 0.15f;
+    [SerializeField] private float speed = 1f;
 
     private void Start()
     {
