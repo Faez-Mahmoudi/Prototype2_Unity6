@@ -1224,6 +1224,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SliderCanvas (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6943396460607033117, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943396460607033117, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9195027780207542921, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1278,7 +1286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9195027780207542921, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.66
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 9195027780207542921, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1298,11 +1306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9195027780207542921, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.7
+      value: -0.013
       objectReference: {fileID: 0}
     - target: {fileID: 9195027780207542921, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.191
+      value: 0.184
       objectReference: {fileID: 0}
     - target: {fileID: 9195027780207542921, guid: e84a87f3dabc0b344a45b40ff8a0bda0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

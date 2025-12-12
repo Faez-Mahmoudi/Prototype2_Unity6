@@ -842,8 +842,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278835558
-  m_fontColor: {r: 0.3982259, g: 0.8490566, b: 0.03684576, a: 1}
+    rgba: 4290040023
+  m_fontColor: {r: 0.8431373, g: 0.81568635, b: 0.7058824, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1530,8 +1530,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289845515
-  m_fontColor: {r: 0.043137256, g: 0.8509804, b: 0.69353485, a: 1}
+    rgba: 4283989647
+  m_fontColor: {r: 0.56078434, g: 0.49411768, b: 0.34509805, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2628,6 +2628,8 @@ MonoBehaviour:
   - {fileID: 3527921272293208126, guid: 2c6cc8f6026c8e94496a2c8f00426d39, type: 3}
   - {fileID: 8217034266009234231, guid: 261d54f31c770ac4c964b21e7dc2fb19, type: 3}
   - {fileID: 605008016554996503, guid: 07b9a9e6e5b335e49b8ee0470d33f50e, type: 3}
+  - {fileID: 8432184530958793977, guid: 4b7260a2f23149049bf8a4028f5fd54a, type: 3}
+  - {fileID: 341417742932839472, guid: 8c2bce95a72ebd149af085ea06f26fd8, type: 3}
   startDelay: 2
   spawnInterval: 2.5
 --- !u!4 &1315304195
@@ -2814,6 +2816,8 @@ MonoBehaviour:
   - {fileID: 3527921272293208126, guid: 2c6cc8f6026c8e94496a2c8f00426d39, type: 3}
   - {fileID: 8217034266009234231, guid: 261d54f31c770ac4c964b21e7dc2fb19, type: 3}
   - {fileID: 605008016554996503, guid: 07b9a9e6e5b335e49b8ee0470d33f50e, type: 3}
+  - {fileID: 8432184530958793977, guid: 4b7260a2f23149049bf8a4028f5fd54a, type: 3}
+  - {fileID: 341417742932839472, guid: 8c2bce95a72ebd149af085ea06f26fd8, type: 3}
   startDelay: 1.5
   spawnInterval: 2.5
 --- !u!4 &1504882983
@@ -2862,8 +2866,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalPrefabs:
   - {fileID: 3527921272293208126, guid: 2c6cc8f6026c8e94496a2c8f00426d39, type: 3}
-  - {fileID: 8217034266009234231, guid: 261d54f31c770ac4c964b21e7dc2fb19, type: 3}
+  - {fileID: 7138992244878291370, guid: de7122f1675150c42a50431d434c9927, type: 3}
   - {fileID: 605008016554996503, guid: 07b9a9e6e5b335e49b8ee0470d33f50e, type: 3}
+  - {fileID: 341417742932839472, guid: 8c2bce95a72ebd149af085ea06f26fd8, type: 3}
   startDelay: 3
   spawnInterval: 4
 --- !u!4 &1548255564
@@ -3247,7 +3252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2627451, g: 0.3137255, b: 0.13725491, a: 1}
+  m_Color: {r: 0.15638462, g: 0.94716984, b: 0.062548816, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
