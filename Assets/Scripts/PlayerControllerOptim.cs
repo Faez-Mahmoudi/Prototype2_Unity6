@@ -21,6 +21,7 @@ public class PlayerControllerOptim : MonoBehaviour
     void Start()
     {
         uiHandler = GameObject.Find("Canvas").GetComponent<UIHandler>();
+        hasPowerup = false;
     }
 
     // Update is called once per frame
@@ -38,10 +39,13 @@ public class PlayerControllerOptim : MonoBehaviour
     {
         if(other.CompareTag("Powerup"))
         {
-            hasPowerup = true;
-            Destroy(other.gameObject);
-            powerupPanel.gameObject.SetActive(true);
-            StartCoroutine(PowerupCountdownRoutine());
+            if (!hasPowerup)
+            {
+                hasPowerup = true;
+                Destroy(other.gameObject);
+                powerupPanel.gameObject.SetActive(true);
+                StartCoroutine(PowerupCountdownRoutine());
+            }
         }
 
         if(other.CompareTag("LivePear"))

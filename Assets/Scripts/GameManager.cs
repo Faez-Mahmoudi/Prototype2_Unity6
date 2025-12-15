@@ -48,5 +48,9 @@ public class GameManager : MonoBehaviour
             SaveData data = JsonUtility.FromJson<SaveData>(json);
             bestScore = data.b_Score;
         }
+        else
+        {
+            bestScore = 0;
+        }
     }
 }

@@ -15,6 +15,7 @@ public class UIHandler : MonoBehaviour
     public bool paused;
     private int score = 0;
     private int lives = 3;
+    private int step = 0;
     private int nextPowerupScore = 50;
     private int nextLiveScore = 100;
 
@@ -65,14 +66,17 @@ public class UIHandler : MonoBehaviour
         {
             Vector3 pos = new Vector3(Random.Range(-10, 10), 1, Random.Range(0, 10));
             Instantiate(powerupPrefab, pos, powerupPrefab.transform.rotation);
-            nextPowerupScore += 100;            
+            nextPowerupScore += (100 + step * 25);
+            //Debug.Log("value:" + nextPowerupScore);
+            step++;            
         }
 
         while (score >= nextLiveScore)
         {
             Vector3 pos = new Vector3(Random.Range(-10, 10), 1, Random.Range(0, 10));
             Instantiate(livePearPrefab, pos, livePearPrefab.transform.rotation);
-            nextLiveScore += 100;            
+            nextLiveScore += (100 + step * 30); 
+            //Debug.Log("live:" + nextLiveScore);
         }
     }
 
